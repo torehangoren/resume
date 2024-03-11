@@ -3,34 +3,174 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/UI5Logo_orange_desktop.png" />
+  <link rel="icon" type="image/svg+xml" href="1689578885214.jpeg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Törehan Gören Resume</title>
 </head>
 
 <body style="background-color:rgb(243, 243, 243);">
-<!-- Bar -->
-  <ui5-bar design="Header">
-    <ui5-label id="basic-label">Content</ui5-label>
+  <!-- Bar -->
+  <ui5-bar design="Header" class="head">
+    <ui5-label id="basic-label">Resume</ui5-label>
     <ui5-button icon="home" tooltip="Home" design="Transparent" slot="startContent"></ui5-button>
     <ui5-button icon="menu" tooltip="Menu" slot="endContent"></ui5-button>
   </ui5-bar>
 
-<!-- Content -->
-  <ui5-panel id="panel-2"  fixed="">
-    <ui5-title level="H1"> Törehan Gören </ui5-title>
+  <!-- Content -->
+  <ui5-panel id="panel-2" fixed="" header-text="About Me" class="contentMargin">
+    <ui5-title level="H2"> Törehan Gören </ui5-title>
     <ui5-label wrapping-type="Normal">Fullstack SAP Developer</ui5-label>
     <br>
     <ui5-label wrapping-type="Normal">UI5 Specialist</ui5-label>
-    <p class="content-color">Welcome to my corner of the web! If you're here, it's likely because you share my passion for software development. Allow me to introduce myself properly. 😊</p>
+    <div><img src="/gotoL.jpg" alt="img" class="img" />
+    </div>
+    <p class="content-color">Welcome to my corner of the web! If you're here, it's likely because you share my passion
+      for software development. Allow me to introduce myself properly. 😊</p>
 
-    <p class="content-color">My journey into the world of technology began as a hobby, but it quickly evolved into a full-fledged career path. Pursuing my passion led me to pursue a Master's degree in Business Informatics at Marmara University in Istanbul. It was during this time that I embarked on my professional journey as an ABAP Developer. </p>
-      
-      <p class="content-color"> Fast forward to today, and I find myself thriving in the dynamic landscape of software development, now specializing as a Senior UI5 Developer at TGW Logistics in Austria. My role involves crafting innovative Freestyle UI5 Applications that push the boundaries of what's possible. </p>
-      
-        <p class="content-color"> With each project and every line of code, I'm fueled by the excitement of creating something meaningful and impactful. I'm always eager to connect with fellow enthusiasts and collaborators who share my dedication to excellence in software development. So, whether you're here out of curiosity or shared interests, I'm thrilled to welcome you to my digital space. Let's embark on this journey together! </p>
+    <p class="content-color">My journey into the world of technology began as a hobby, but it quickly evolved into a
+      full-fledged career path. Pursuing my passion led me to pursue a Master's degree in Business Informatics at
+      Marmara University in Istanbul. It was during this time that I embarked on my professional journey as an ABAP
+      Developer. </p>
+
+    <p class="content-color"> Fast forward to today, and I find myself thriving in the dynamic landscape of software
+      development, now specializing as a Senior UI5 Developer at TGW Logistics in Austria. My role involves crafting
+      innovative Freestyle UI5 Applications that push the boundaries of what's possible. </p>
+
+    <p class="content-color"> With each project and every line of code, I'm fueled by the excitement of creating
+      something meaningful and impactful. I'm always eager to connect with fellow enthusiasts and collaborators who
+      share my dedication to excellence in software development. So, whether you're here out of curiosity or shared
+      interests, I'm thrilled to welcome you to my digital space. Let's embark on this journey together! </p>
     </p>
   </ui5-panel>
+
+  <ui5-card class="contentMargin">
+    <ui5-card-header
+    slot="header"
+    title-text="Contact details"
+  ></ui5-card-header>
+    <div class="content content-padding">
+      <!-- <ui5-title level="H5" style="padding-block-end: 1rem;">Contact details</ui5-title> -->
+      <div class="content-group">
+        <ui5-label show-colon>Company Name</ui5-label>
+
+        <span> <ui5-icon name="building"></ui5-icon> TGW Systems Integration GmbH</span>
+      </div>
+      <div class="content-group">
+        <ui5-label show-colon>E-Mail</ui5-label>
+        <ui5-link
+          target="mailto:Toerehan.Goeren%40tgw-group.com?subject=New%20Job%20opportunity&body=Hi%20T%C3%B6rehan%2C">
+          <ui5-icon name="email"></ui5-icon> toerehan.goeren@tgw-group.com</ui5-link>
+      </div>
+      <div class="content-group">
+        <ui5-label show-colon>Phone</ui5-label>
+        <ui5-link target="_blank"> <ui5-icon name="call"></ui5-icon> +43 676 87175468</ui5-link>
+      </div>
+      <div class="content-group">
+        <ui5-label show-colon>Location</ui5-label>
+        <ui5-link target="_blank"> <ui5-icon name="map"></ui5-icon> Wels, Austria</ui5-link>
+      </div>
+      <div class="content-group">
+        <ui5-label show-colon>Links</ui5-label>
+        <div >
+        <a href="https://github.com/torehangoren/"><img class="Image" src="/github.png"/></a>
+        <a href="https://www.linkedin.com/in/toerehan-goeren/"><img class="Image" src="/linkedin.png" /></a>
+        <a href="https://twitter.com/torehangoren"><img class="Image" src="/x.png" /></a>
+        </div>
+      </div>
+    </div>
+  </ui5-card>
+
+  <!-- Projekte -->
+  <ui5-flexible-column-layout id="fcl" style="height: 600px;">
+    <div class="col" slot="startColumn">
+      <ui5-shellbar primary-title="Projects" >
+        <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" slot="logo"> -->
+        <!-- <ui5-shellbar-item icon="disconnected" text="Disconnect"></ui5-shellbar-item>
+        <ui5-shellbar-item icon="incoming-call" text="Incoming Calls"></ui5-shellbar-item> -->
+      </ui5-shellbar>
+      <br><br>
+      <ui5-list id="col1list" header-text="Projects" mode="SingleSelect">
+        <ui5-li description="EWM S/4Hana Project" icon="slim-arrow-right" icon-end additional-text="UI5 Development">Bell Food Group AG</ui5-li>
+        <ui5-li description="EWM S/4Hana Project" icon="slim-arrow-right" icon-end additional-text="UI5 Development">HORSCH Maschinen GmbH</ui5-li>
+        <ui5-li description="EWM 9.5 Project" icon="slim-arrow-right" icon-end additional-text="UI5 Development">HEINRICH KIPP WERK GmbH & Co. KG</ui5-li>
+        <ui5-li description="EWM S/4Hana Project" icon="slim-arrow-right" icon-end additional-text="Abap Development">BASF SE</ui5-li>
+        <ui5-li description="S/4Hana RE/FX, IFRS16" icon="slim-arrow-right" icon-end additional-text="Abap Development">CarrefourSA</ui5-li>
+        <ui5-li description="S/4Hana RE/FX, IFRS16" icon="slim-arrow-right" icon-end additional-text="Abap Development">Turkcell Communication services AG</ui5-li>
+        <ui5-li description="S/4 HANA FI,CO,MT940" icon="slim-arrow-right" icon-end additional-text="Abap Development">Multinet Up (Meal Ticket Service)</ui5-li>
+      </ui5-list>
+    </div> 
+    <div class="col" slot="midColumn">
+      <div class="colHeader">
+        <ui5-title id="col2title" level="H2" style="min-width: 1px;"></ui5-title>
+        <div class="colSubHeader">
+          <ui5-button id="fullscreenMidColumn" design="Transparent" icon="full-screen"></ui5-button>
+          <ui5-button id="closeMidColumn" icon="decline" design="Transparent"></ui5-button>
+        </div>
+      </div>
+      <br>
+      <section style="padding: 1rem 1rem;">
+        <ui5-title level="H3">General Information</ui5-title>
+        <br>
+        <div style="display:flex; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap">
+          <div style="display:flex; flex-direction: row; align-items: center;">
+            <ui5-avatar id="avatar" icon="laptop" color-scheme="Placeholder" size="XL" style="margin: 0 1rem; min-width: 7rem;">
+              <img id="compImgID" src="">
+            </ui5-avatar>
+            <div>
+              <div class="productInfo">
+                <ui5-title level="H5">Company:</ui5-title>
+                <ui5-title level="H5" id="lblName"></ui5-title>
+              </div>
+              <br>
+              <div class="productInfo">
+                <ui5-title level="H5">Description:</ui5-title>
+                <ui5-title level="H5" id="lblDesc"></ui5-title>
+              </div>
+              <br>
+              <div class="productInfo">
+                <ui5-title level="H5">Period of time:</ui5-title>
+                <ui5-title level="H5" id="lblDuration"><b></b></ui5-title>
+              </div>
+              <br>
+              <div class="productInfo">
+                <ui5-title level="H5">Website:</ui5-title>
+                <a id="aWebsite"><ui5-title level="H5" id="lblWebsite"><b></b></ui5-title></a> 
+              </div>
+            </div>
+          </div>
+         
+          <span></span>
+        </div>
+        <br><br><br>
+       
+  <ui5-panel id="panel-2" fixed="" header-text="Activities" class="contentMargin">
+    <ui5-label wrapping-type="Normal" id="activitiesLbl" ></ui5-label>
+    <br>
+    
+    <p class="content-color" id="activitiesContent"></p>
+
+    
+  </ui5-panel>
+
+      </section>
+    </div>
+    <div class="col" slot="endColumn">
+      <div class="colHeader">
+        <ui5-title id="col3title" style="min-width: 1px;"></ui5-title>
+        <div class="colSubHeader">
+          <ui5-button design="Emphasized">Edit</ui5-button>
+          <ui5-button design="Transparent" icon="add"></ui5-button>
+          <ui5-button id="fullscreenEndColumn" design="Transparent" icon="full-screen"></ui5-button>
+          <ui5-button id="closeEndColumn" icon="decline" design="Transparent"></ui5-button>
+        </div>
+      </div>
+      <br><br>
+      <section style="padding: 1rem 1rem; background: var(--sapList_Background);">
+       
+      </section>
+    </div>
+  </ui5-flexible-column-layout>
+
 
   <script type="module" src="/main.js"></script>
 </body>
