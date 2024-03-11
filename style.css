@@ -1,22 +1,71 @@
-ui5-card {
-  width: 22rem;
+.content,
+.content-group {
+  display: flex;
+  flex-direction: column;
+  padding-block-end: 1rem;
 }
 
-.content,
-    .content-group {
-        display: flex;
-        flex-direction: column;
-        padding-block-end: 1rem;
-    }
-    .content-padding {
-        padding: 5rem 2rem 1 2rem;
-        box-sizing: border-box;
-    }
+.content-padding {
+  padding: 0.5rem 1rem 0 1rem;
+  box-sizing: border-box;
+}
 
-    
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, 22rem);
-      grid-auto-rows: 1fr;
-      gap: 1rem;
-  }
+.head {
+  margin-bottom: 25px;
+}
+
+.contentMargin {
+  margin-bottom: 15px;
+}
+
+.img {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px;
+  width: 150px;
+  float: left;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.Image {
+  width: 30px;
+}
+
+.ImageSAP {
+  width: 50px;
+  height: 30px;
+}
+
+.content-color {
+  color: var(--sapField_TextColor);
+}
+
+
+.col {
+  height: 100%;
+}
+.colHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 2.75rem;
+  padding: 0.25rem 1rem 0.25rem 1rem;
+  background: var(--sapList_Background);
+  box-sizing: border-box;
+}
+.colSubHeader {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+.productInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
