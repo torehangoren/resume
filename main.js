@@ -23,6 +23,7 @@ import "@ui5/webcomponents/dist/Avatar.js";
 import "@ui5/webcomponents/dist/Menu.js";
 import "@ui5/webcomponents/dist/MenuItem.js";
 import "@ui5/webcomponents/dist/Link";
+import { getJSON } from "/util.js";
 
 
 
@@ -36,44 +37,17 @@ getInitialSetup();
 
 function getInitialSetup() {
 
+    getJSON("./models/education.json", function (data) {
+        getEducationItems(data)
+    }, function (error) { })
 
-    fetch("./models/education.json")
-        .then((res) => {
-            if (!res.ok) {
-                throw new Error
-                    (`HTTP error! Status: ${res.status}`);
-            }
-            return res.json();
-        })
-        .then((data) =>
-            getEducationItems(data)
-        ).catch((error) =>
-            console.error("Unable to fetch data:", error));
-    fetch("./models/mainInfo.json")
-        .then((res) => {
-            if (!res.ok) {
-                throw new Error
-                    (`HTTP error! Status: ${res.status}`);
-            }
-            return res.json();
-        })
-        .then((data) =>
-            getMainInfo(data)
-        ).catch((error) =>
-            console.error("Unable to fetch data:", error));
-    fetch("./models/projects.json")
-        .then((res) => {
-            if (!res.ok) {
-                throw new Error
-                    (`HTTP error! Status: ${res.status}`);
-            }
-            return res.json();
-        })
-        .then((data) =>
+    getJSON("./models/mainInfo.json", function (data) {
+        getMainInfo(data)
+    }, function (error) { })
 
-            getProjektItems(data)
-        ).catch((error) =>
-            console.error("Unable to fetch data:", error));
+    getJSON("./models/projects.json", function (data) {
+        getProjektItems(data)
+    }, function (error) { })
 
 }
 
