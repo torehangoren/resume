@@ -20,8 +20,8 @@ import "@ui5/webcomponents-fiori/dist/ShellBarItem.js";
 import "@ui5/webcomponents/dist/List.js";
 import "@ui5/webcomponents/dist/StandardListItem.js"
 import "@ui5/webcomponents/dist/Avatar.js";
-
-
+import "@ui5/webcomponents/dist/Menu.js";
+import "@ui5/webcomponents/dist/MenuItem.js";
 import { setupCounter } from './counter.js'
 
 // document.querySelector('#app').innerHTML = `
@@ -192,3 +192,10 @@ fullscreenMidColumn.addEventListener("click", function (e) {
     fcl.layout = nextLayout("col2fullscreen");
 });
 
+btnOpenBasic.addEventListener("click", function(event) {
+    menuBasic.showAt(btnOpenBasic);
+});
+
+downloadCv.addEventListener("click", function(event) {
+    window.open("/CV.pdf");
+});
