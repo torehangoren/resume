@@ -12,8 +12,12 @@
   <!-- Bar -->
   <ui5-bar design="Header" class="head">
     <ui5-label id="basic-label">Resume</ui5-label>
-    <ui5-button icon="home" tooltip="Home" design="Transparent" slot="startContent"></ui5-button>
-    <ui5-button icon="menu" tooltip="Menu" slot="endContent"></ui5-button>
+    <!-- <ui5-button icon="home" tooltip="Home" design="Transparent" slot="startContent"></ui5-button> -->
+    <ui5-button icon="menu" tooltip="Menu" slot="endContent" id="btnOpenBasic"></ui5-button>
+    <ui5-menu id="menuBasic">
+      <ui5-menu-item text="Download Resume" icon="download" id="downloadCv"></ui5-menu-item>
+      <ui5-menu-item text="Write a Mail" icon="email" id="writeMail"></ui5-menu-item>
+    </ui5-menu>
   </ui5-bar>
 
   <!-- Content -->
@@ -44,10 +48,7 @@
   </ui5-panel>
 
   <ui5-card class="contentMargin">
-    <ui5-card-header
-    slot="header"
-    title-text="Contact details"
-  ></ui5-card-header>
+    <ui5-card-header slot="header" title-text="Contact details"></ui5-card-header>
     <div class="content content-padding">
       <!-- <ui5-title level="H5" style="padding-block-end: 1rem;">Contact details</ui5-title> -->
       <div class="content-group">
@@ -71,34 +72,38 @@
       </div>
       <div class="content-group">
         <ui5-label show-colon>Links</ui5-label>
-        <div >
-        <a href="https://github.com/torehangoren/"><img class="Image" src="/github.png"/></a>
-        <a href="https://www.linkedin.com/in/toerehan-goeren/"><img class="Image" src="/linkedin.png" /></a>
-        <a href="https://twitter.com/torehangoren"><img class="Image" src="/x.png" /></a>
+        <div>
+          <a href="https://github.com/torehangoren/"><img class="Image marginRight" src="/github.png"/></a>
+          <a href="https://www.linkedin.com/in/toerehan-goeren/"><img class="Image marginRight" src="/linkedin.png" /></a>
+          <a href="https://twitter.com/torehangoren"><img class="Image" src="/x.png" /></a>
         </div>
       </div>
     </div>
   </ui5-card>
 
   <!-- Projekte -->
-  <ui5-flexible-column-layout id="fcl" style="height: 600px;">
+  <ui5-flexible-column-layout id="fcl" style="height: 600px;" class="contentMargin">
     <div class="col" slot="startColumn">
-      <ui5-shellbar primary-title="Projects" >
-        <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" slot="logo"> -->
-        <!-- <ui5-shellbar-item icon="disconnected" text="Disconnect"></ui5-shellbar-item>
-        <ui5-shellbar-item icon="incoming-call" text="Incoming Calls"></ui5-shellbar-item> -->
+      <ui5-shellbar primary-title="Projects">
       </ui5-shellbar>
       <br><br>
       <ui5-list id="col1list" header-text="Projects" mode="SingleSelect">
-        <ui5-li description="EWM S/4Hana Project" icon="slim-arrow-right" icon-end additional-text="UI5 Development">Bell Food Group AG</ui5-li>
-        <ui5-li description="EWM S/4Hana Project" icon="slim-arrow-right" icon-end additional-text="UI5 Development">HORSCH Maschinen GmbH</ui5-li>
-        <ui5-li description="EWM 9.5 Project" icon="slim-arrow-right" icon-end additional-text="UI5 Development">HEINRICH KIPP WERK GmbH & Co. KG</ui5-li>
-        <ui5-li description="EWM S/4Hana Project" icon="slim-arrow-right" icon-end additional-text="Abap Development">BASF SE</ui5-li>
-        <ui5-li description="S/4Hana RE/FX, IFRS16" icon="slim-arrow-right" icon-end additional-text="Abap Development">CarrefourSA</ui5-li>
-        <ui5-li description="S/4Hana RE/FX, IFRS16" icon="slim-arrow-right" icon-end additional-text="Abap Development">Turkcell Communication services AG</ui5-li>
-        <ui5-li description="S/4 HANA FI,CO,MT940" icon="slim-arrow-right" icon-end additional-text="Abap Development">Multinet Up (Meal Ticket Service)</ui5-li>
+        <ui5-li description="EWM S/4Hana Project" icon="slim-arrow-right" icon-end
+          additional-text="UI5 Development">Bell Food Group AG</ui5-li>
+        <ui5-li description="EWM S/4Hana Project" icon="slim-arrow-right" icon-end
+          additional-text="UI5 Development">HORSCH Maschinen GmbH</ui5-li>
+        <ui5-li description="EWM 9.5 Project" icon="slim-arrow-right" icon-end
+          additional-text="UI5 Development">HEINRICH KIPP WERK GmbH & Co. KG</ui5-li>
+        <ui5-li description="EWM S/4Hana Project" icon="slim-arrow-right" icon-end
+          additional-text="Abap Development">BASF SE</ui5-li>
+        <ui5-li description="S/4Hana RE/FX, IFRS16" icon="slim-arrow-right" icon-end
+          additional-text="Abap Development">CarrefourSA</ui5-li>
+        <ui5-li description="S/4Hana RE/FX, IFRS16" icon="slim-arrow-right" icon-end
+          additional-text="Abap Development">Turkcell Communication services AG</ui5-li>
+        <ui5-li description="S/4 HANA FI,CO,MT940" icon="slim-arrow-right" icon-end
+          additional-text="Abap Development">Multinet Up (Meal Ticket Service)</ui5-li>
       </ui5-list>
-    </div> 
+    </div>
     <div class="col" slot="midColumn">
       <div class="colHeader">
         <ui5-title id="col2title" level="H2" style="min-width: 1px;"></ui5-title>
@@ -111,9 +116,11 @@
       <section style="padding: 1rem 1rem;">
         <ui5-title level="H3">General Information</ui5-title>
         <br>
-        <div style="display:flex; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap">
+        <div
+          style="display:flex; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap">
           <div style="display:flex; flex-direction: row; align-items: center;">
-            <ui5-avatar id="avatar" icon="laptop" color-scheme="Placeholder" size="XL" style="margin: 0 1rem; min-width: 7rem;">
+            <ui5-avatar id="avatar" icon="laptop" color-scheme="Placeholder" size="XL"
+              style="margin: 0 1rem; min-width: 7rem;">
               <img id="compImgID" src="">
             </ui5-avatar>
             <div>
@@ -134,23 +141,23 @@
               <br>
               <div class="productInfo">
                 <ui5-title level="H5">Website:</ui5-title>
-                <a id="aWebsite"><ui5-title level="H5" id="lblWebsite"><b></b></ui5-title></a> 
+                <a id="aWebsite"><ui5-title level="H5" id="lblWebsite"><b></b></ui5-title></a>
               </div>
             </div>
           </div>
-         
+
           <span></span>
         </div>
         <br><br><br>
-       
-  <ui5-panel id="panel-2" fixed="" header-text="Activities" class="contentMargin">
-    <ui5-label wrapping-type="Normal" id="activitiesLbl" ></ui5-label>
-    <br>
-    
-    <p class="content-color" id="activitiesContent"></p>
 
-    
-  </ui5-panel>
+        <ui5-panel id="panel-2" fixed="" header-text="Activities" class="contentMargin">
+          <ui5-label wrapping-type="Normal" id="activitiesLbl"></ui5-label>
+          <br>
+
+          <p class="content-color" id="activitiesContent"></p>
+
+
+        </ui5-panel>
 
       </section>
     </div>
@@ -166,10 +173,25 @@
       </div>
       <br><br>
       <section style="padding: 1rem 1rem; background: var(--sapList_Background);">
-       
+
       </section>
     </div>
   </ui5-flexible-column-layout>
+
+  <!-- Education -->
+  <ui5-card>
+    <ui5-card-header slot="header" title-text="Education">
+      <ui5-icon name="study-leave" slot="avatar"></ui5-icon>
+    </ui5-card-header>
+    <ui5-list separators="None" style="margin-block-end: 0.75rem;">
+      <ui5-li image="/logo-marmara.png" description="Degree: Master of Science">Business Informatics at Marmara
+        University, Istanbul</ui5-li>
+      <ui5-li image="/logo-johannesgutenberg.png" description="Degree: Bachelor">Germanistik - Johannes
+        Gutenberg-Universität Mainz</ui5-li>
+      <ui5-li image="/logo-cukurova.png" description="Degree: Bachelor">Germanistik at Cukurova University,
+        Adana</ui5-li>
+    </ui5-list>
+  </ui5-card>
 
 
   <script type="module" src="/main.js"></script>
