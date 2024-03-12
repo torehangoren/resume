@@ -31,21 +31,35 @@ To install and run this application locally, follow these steps:
    npm install
    ```
 
-4. Start the development server:
+4. Install @ui5/webcomponents:
 
    ```bash
-   npm start
+   npm install @ui5/webcomponents
    ```
 
-5. Open your web browser and navigate to http://localhost:8080 to view the application.
+
+5. Start the development server:
+
+   ```bash
+   npm run dev​
+   ```
+
+6. Run a production build:
+
+   ```bash
+   npm run build
+
+   ```
+
+7. Open your web browser and navigate to http://localhost:8080 to view the application.
 
 ## Usage
 
 This application serves as a resume CV, showcasing your skills, experiences, and projects. To customize the content:
 
-1. Open the `src` directory.
-2. Modify the TypeScript files (`*.ts`) to update your resume content.
-3. Run `npm start` to see your changes reflected in the browser.
+1. Open the `models` directory.
+2. Modify the JSON files (`*.json`) to update your resume content.
+3. Run `npm run dev​` to see your changes reflected in the browser.
 
 Feel free to customize the styling, layout, and functionality to suit your preferences and requirements.
 

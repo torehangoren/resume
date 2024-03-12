@@ -14,10 +14,12 @@
     <ui5-label id="basic-label">Resume</ui5-label>
     <!-- <ui5-button icon="home" tooltip="Home" design="Transparent" slot="startContent"></ui5-button> -->
     <ui5-button icon="menu" tooltip="Menu" slot="endContent" id="btnOpenBasic"></ui5-button>
-    <ui5-menu id="menuBasic">
-      <ui5-menu-item text="Download Resume" icon="download" id="downloadCv"></ui5-menu-item>
-      <ui5-menu-item text="Write a Mail" icon="email" id="writeMail"></ui5-menu-item>
-    </ui5-menu>
+    <ui5-responsive-popover id="myPopover1" placement-type="Bottom" class="no-padding">
+      <ui5-list id="myList1" mode="SingleSelect" separators="None">
+        <ui5-li icon="download" id="download">Download Resume</ui5-li>
+        <ui5-li icon="email" id="mail">Write Me</ui5-li>
+      </ui5-list>
+    </ui5-responsive-popover>
   </ui5-bar>
 
   <!-- Content -->
@@ -28,23 +30,8 @@
     <ui5-label wrapping-type="Normal">UI5 Specialist</ui5-label>
     <div><img src="/gotoL.jpg" alt="img" class="img" />
     </div>
-    <p class="content-color">Welcome to my corner of the web! If you're here, it's likely because you share my passion
-      for software development. Allow me to introduce myself properly. 😊</p>
+    <p class="content-color" id="aboutMeText"> </p>
 
-    <p class="content-color">My journey into the world of technology began as a hobby, but it quickly evolved into a
-      full-fledged career path. Pursuing my passion led me to pursue a Master's degree in Business Informatics at
-      Marmara University in Istanbul. It was during this time that I embarked on my professional journey as an ABAP
-      Developer. </p>
-
-    <p class="content-color"> Fast forward to today, and I find myself thriving in the dynamic landscape of software
-      development, now specializing as a Senior UI5 Developer at TGW Logistics in Austria. My role involves crafting
-      innovative Freestyle UI5 Applications that push the boundaries of what's possible. </p>
-
-    <p class="content-color"> With each project and every line of code, I'm fueled by the excitement of creating
-      something meaningful and impactful. I'm always eager to connect with fellow enthusiasts and collaborators who
-      share my dedication to excellence in software development. So, whether you're here out of curiosity or shared
-      interests, I'm thrilled to welcome you to my digital space. Let's embark on this journey together! </p>
-    </p>
   </ui5-panel>
 
   <ui5-card class="contentMargin">
@@ -58,23 +45,31 @@
       </div>
       <div class="content-group">
         <ui5-label show-colon>E-Mail</ui5-label>
-        <ui5-link
-          target="mailto:Toerehan.Goeren%40tgw-group.com?subject=New%20Job%20opportunity&body=Hi%20T%C3%B6rehan%2C">
-          <ui5-icon name="email"></ui5-icon> toerehan.goeren@tgw-group.com</ui5-link>
+        <div>
+          <ui5-icon name="email"></ui5-icon>
+          <a id="emailLink"> </a>
+        </div>
       </div>
       <div class="content-group">
         <ui5-label show-colon>Phone</ui5-label>
-        <ui5-link target="_blank"> <ui5-icon name="call"></ui5-icon> +43 676 87175468</ui5-link>
+        <div>
+          <ui5-icon name="call"></ui5-icon>
+          <a id="phoneNr"> </a>
+        </div>
       </div>
       <div class="content-group">
         <ui5-label show-colon>Location</ui5-label>
-        <ui5-link target="_blank"> <ui5-icon name="map"></ui5-icon> Wels, Austria</ui5-link>
+        <div>
+          <ui5-icon name="map"></ui5-icon>
+          <ui5-label id="maps"></ui5-label>
+      </div>
       </div>
       <div class="content-group">
         <ui5-label show-colon>Links</ui5-label>
         <div>
-          <a href="https://github.com/torehangoren/"><img class="Image marginRight" src="/github.png"/></a>
-          <a href="https://www.linkedin.com/in/toerehan-goeren/"><img class="Image marginRight" src="/linkedin.png" /></a>
+          <a href="https://github.com/torehangoren/"><img class="Image marginRight" src="/github.png" /></a>
+          <a href="https://www.linkedin.com/in/toerehan-goeren/"><img class="Image marginRight"
+              src="/linkedin.png" /></a>
           <a href="https://twitter.com/torehangoren"><img class="Image" src="/x.png" /></a>
         </div>
       </div>
@@ -87,21 +82,9 @@
       <ui5-shellbar primary-title="Projects">
       </ui5-shellbar>
       <br><br>
+
       <ui5-list id="col1list" header-text="Projects" mode="SingleSelect">
-        <ui5-li description="EWM S/4Hana Project" icon="slim-arrow-right" icon-end
-          additional-text="UI5 Development">Bell Food Group AG</ui5-li>
-        <ui5-li description="EWM S/4Hana Project" icon="slim-arrow-right" icon-end
-          additional-text="UI5 Development">HORSCH Maschinen GmbH</ui5-li>
-        <ui5-li description="EWM 9.5 Project" icon="slim-arrow-right" icon-end
-          additional-text="UI5 Development">HEINRICH KIPP WERK GmbH & Co. KG</ui5-li>
-        <ui5-li description="EWM S/4Hana Project" icon="slim-arrow-right" icon-end
-          additional-text="Abap Development">BASF SE</ui5-li>
-        <ui5-li description="S/4Hana RE/FX, IFRS16" icon="slim-arrow-right" icon-end
-          additional-text="Abap Development">CarrefourSA</ui5-li>
-        <ui5-li description="S/4Hana RE/FX, IFRS16" icon="slim-arrow-right" icon-end
-          additional-text="Abap Development">Turkcell Communication services AG</ui5-li>
-        <ui5-li description="S/4 HANA FI,CO,MT940" icon="slim-arrow-right" icon-end
-          additional-text="Abap Development">Multinet Up (Meal Ticket Service)</ui5-li>
+
       </ui5-list>
     </div>
     <div class="col" slot="midColumn">
@@ -183,13 +166,7 @@
     <ui5-card-header slot="header" title-text="Education">
       <ui5-icon name="study-leave" slot="avatar"></ui5-icon>
     </ui5-card-header>
-    <ui5-list separators="None" style="margin-block-end: 0.75rem;">
-      <ui5-li image="/logo-marmara.png" description="Degree: Master of Science">Business Informatics at Marmara
-        University, Istanbul</ui5-li>
-      <ui5-li image="/logo-johannesgutenberg.png" description="Degree: Bachelor">Germanistik - Johannes
-        Gutenberg-Universität Mainz</ui5-li>
-      <ui5-li image="/logo-cukurova.png" description="Degree: Bachelor">Germanistik at Cukurova University,
-        Adana</ui5-li>
+    <ui5-list separators="None" style="margin-block-end: 0.75rem;" id="educationList">
     </ui5-list>
   </ui5-card>
 
