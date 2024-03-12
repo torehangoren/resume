@@ -1,0 +1,17 @@
+[
+    {
+        "uni": "Business Informatics at Marmara University, Istanbul",
+        "degree": "Degree: Master of Science",
+        "img": "/logo-marmara.png"
+    },
+    {
+        "uni": "Germanistik - Johannes Gutenberg-Universität Mainz",
+        "degree": "Degree: Bachelor",
+        "img": "/logo-johannesgutenberg.png"
+    },
+    {
+        "uni": "Germanistik at Cukurova University, Adana",
+        "degree": "Degree: Bachelor",
+        "img": "/logo-cukurova.png"
+    }
+]
