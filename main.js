@@ -158,9 +158,7 @@ btnOpenBasic.addEventListener("click", function (event) {
 });
 
 myList1.addEventListener("item-click", function (e) {
-    if (e.detail.item.id === "download") {
-        window.open(mainInfos.cvDownload);
-    } else if (e.detail.item.id === "mail") {
+   if (e.detail.item.id === "mail") {
         window.open("mailto:" + mainInfos.mail);
     }
 });
